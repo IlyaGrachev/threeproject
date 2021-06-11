@@ -81,11 +81,11 @@ $(document).ready(function(){
     validateForms('#consultation form');
     validateForms('#order form');
 
-    $('input[name=phone]').mask("+7 (999) 999-99-99");
+    $('input[name=phone]').mask("+7 (999) 999-99-99"); // mask phone
 
     $('form').submit(function(e) {
-        e.preventDefault();
-        $.ajax({
+        e.preventDefault();  //deactivate return
+        $.ajax({					// add mailer
             type: "POST",
             url: "mailer/smart.php",
             data: $(this).serialize()
